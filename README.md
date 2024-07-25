@@ -50,7 +50,6 @@ algorithm hash1(key) --> int:
         output = output ^ (key & 0xFF)
         output = output * 0x01000193  // Prime
         key = key >> 8
-
     return abs(output) % 4800
 
 algorithm hash2(key) --> int:
@@ -61,7 +60,6 @@ algorithm hash2(key) --> int:
     key = (key + (key << 2)) + (key << 4)
     key = key ^ (key >> 28)
     key = key + (key << 31)
-
     return abs(key) % 4800
 
 algorithm hash3(key) --> int:
@@ -71,7 +69,6 @@ algorithm hash3(key) --> int:
     key = key ^ (key >> 13)
     key = key * 326648991
     key = key ^ (key >> 16)
-
     return abs(key) % 4800
 
 
