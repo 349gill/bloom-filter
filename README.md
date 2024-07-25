@@ -72,3 +72,11 @@ algorithm hash3(key) --> int:
     return abs(key) % 4800
 ```
 
+# Setup
+
+```
+javac -d out *.java   
+java -cp out bloom_filter.BloomFilterTest
+```
+
+
