@@ -43,32 +43,32 @@ Using our formula for k, we will need 3 hash functions.
 
 Let them be hash1, hash2, hash3.
 I have used some standard hashing techniques for these functions.
-
+```
 algorithm hash1(key) --> int:
-output = 0x811c9dc5  // Offset basis
-for i = 0 to 4 do
-output = output ^ (key & 0xFF)
-output = output * 0x01000193  // Prime
-key = key >> 8
-return abs(output) % 4800
+    output = 0x811c9dc5  // Offset basis
+    for i = 0 to 4 do
+        output = output ^ (key & 0xFF)
+        output = output * 0x01000193  // Prime
+        key = key >> 8
+    return abs(output) % 4800
 
 algorithm hash2(key) --> int:
-key = (~key) + (key << 21)
-key = key ^ (key >> 24)
-key = (key + (key << 3)) + (key << 8)
-key = key ^ (key >> 14)
-key = (key + (key << 2)) + (key << 4)
-key = key ^ (key >> 28)
-key = key + (key << 31)
-return abs(key) % 4800
+    key = (~key) + (key << 21)
+    key = key ^ (key >> 24)
+    key = (key + (key << 3)) + (key << 8)
+    key = key ^ (key >> 14)
+    key = (key + (key << 2)) + (key << 4)
+    key = key ^ (key >> 28)
+    key = key + (key << 31)
+    return abs(key) % 4800
 
 algorithm hash3(key) --> int:
-key = key * 265443576
-key = key ^ (key >> 16)
-key = key * 224682251
-key = key ^ (key >> 13)
-key = key * 326648991
-key = key ^ (key >> 16)
-return abs(key) % 4800
-
+    key = key * 265443576
+    key = key ^ (key >> 16)
+    key = key * 224682251
+    key = key ^ (key >> 13)
+    key = key * 326648991
+    key = key ^ (key >> 16)
+    return abs(key) % 4800
+```
 
