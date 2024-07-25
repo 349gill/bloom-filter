@@ -39,6 +39,9 @@ Non Cryptographic functions are less stable, but easier to compute.
 
 Let's say we have 1000 keys and we want a false positivity rate of 10%
 Then, using our formula for m, we will need a bit array of size 4800 approximately.
+By comparison, if we used a HashSet for this task, we would need 32 * 1000 --> 32000 bits.
+This is where Bloom Filters are useful, sacrificing certainty and accuracy for efficiency.
+
 Using our formula for k, we will need 3 hash functions.
 
 Let them be hash1, hash2, hash3.
